@@ -5,6 +5,7 @@ extends Node3D
 var enemies_to_spawn : int = 3
 var can_spawn : bool = true
 
+
 func _process(delta):
 	game_manager()
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cx7ybptyw0wc4"]
 
-[ext_resource type="Script" path="res://Scripts/world.gd" id="1_504dn"]
 [ext_resource type="PackedScene" uid="uid://85ns3fpq3kgm" path="res://Tiles/snow_tile_endRoundSpawn.tscn" id="1_ifip7"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_vkrb0"]
 [ext_resource type="PackedScene" uid="uid://bx7kutahegh7e" path="res://Tiles/snow_tile_straight.tscn" id="2_yqa38"]
 [ext_resource type="PackedScene" uid="uid://cym8hy5vbimlp" path="res://Tiles/snow_tile_corner-square.tscn" id="3_yox8l"]
 [ext_resource type="PackedScene" uid="uid://ca0dd260x44cq" path="res://Tiles/snow_tile_end.tscn" id="4_uw27g"]
@@ -16,7 +16,7 @@ _data = {
 point_count = 3
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_504dn")
+script = ExtResource("1_vkrb0")
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -117,17 +117,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.2, 1.5)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40018, 3, 0)
-visible = false
 light_energy = 5.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40018, 3, 4)
-visible = false
 light_energy = 5.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40018, 3, 4)
-visible = false
 light_energy = 5.0
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
