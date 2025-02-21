@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c50lp8ch6fy1i"
+path="res://.godot/imported/spawn-square.obj-96b5feed16e8ce146da8dfe487b98b17.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spawn-square.obj-96b5feed16e8ce146da8dfe487b98b17.mesh"]
+
+source_file="res://Models/spawn-square.obj"
+dest_files=["res://.godot/imported/spawn-square.obj-96b5feed16e8ce146da8dfe487b98b17.mesh", "res://.godot/imported/spawn-square.obj-96b5feed16e8ce146da8dfe487b98b17.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

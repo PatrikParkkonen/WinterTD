@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://whqoelfpkmyo"
+path="res://.godot/imported/detail-dirt-large.obj-ec1d23f0e9fbee8b4b780eb3600c2661.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail-dirt-large.obj-ec1d23f0e9fbee8b4b780eb3600c2661.mesh"]
+
+source_file="res://Models/detail-dirt-large.obj"
+dest_files=["res://.godot/imported/detail-dirt-large.obj-ec1d23f0e9fbee8b4b780eb3600c2661.mesh", "res://.godot/imported/detail-dirt-large.obj-ec1d23f0e9fbee8b4b780eb3600c2661.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxan4slop8u6o"
+path="res://.godot/imported/tower-square-build-e.obj-d4487e785ece836fba2b1d71a6223c53.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-square-build-e.obj-d4487e785ece836fba2b1d71a6223c53.mesh"]
+
+source_file="res://Models/tower-square-build-e.obj"
+dest_files=["res://.godot/imported/tower-square-build-e.obj-d4487e785ece836fba2b1d71a6223c53.mesh", "res://.godot/imported/tower-square-build-e.obj-d4487e785ece836fba2b1d71a6223c53.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ck1wo8giyi00x"
+path="res://.godot/imported/wood-structure.obj-06b9bbd5c6f09790c2b43bb35e2f21ec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wood-structure.obj-06b9bbd5c6f09790c2b43bb35e2f21ec.mesh"]
+
+source_file="res://Models/wood-structure.obj"
+dest_files=["res://.godot/imported/wood-structure.obj-06b9bbd5c6f09790c2b43bb35e2f21ec.mesh", "res://.godot/imported/wood-structure.obj-06b9bbd5c6f09790c2b43bb35e2f21ec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

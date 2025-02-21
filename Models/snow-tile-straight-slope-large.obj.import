@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dovptb7finla2"
+path="res://.godot/imported/snow-tile-straight-slope-large.obj-16b876ba8b48fb49d5aaa5c045ea3c7a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow-tile-straight-slope-large.obj-16b876ba8b48fb49d5aaa5c045ea3c7a.mesh"]
+
+source_file="res://Models/snow-tile-straight-slope-large.obj"
+dest_files=["res://.godot/imported/snow-tile-straight-slope-large.obj-16b876ba8b48fb49d5aaa5c045ea3c7a.mesh", "res://.godot/imported/snow-tile-straight-slope-large.obj-16b876ba8b48fb49d5aaa5c045ea3c7a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

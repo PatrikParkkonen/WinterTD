@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ct7ga77vp47sk"
+path="res://.godot/imported/weapon-ammo-boulder.obj-758c5ae3324808aed37313386d472000.mesh"
+
+[deps]
+
+files=["res://.godot/imported/weapon-ammo-boulder.obj-758c5ae3324808aed37313386d472000.mesh"]
+
+source_file="res://Models/weapon-ammo-boulder.obj"
+dest_files=["res://.godot/imported/weapon-ammo-boulder.obj-758c5ae3324808aed37313386d472000.mesh", "res://.godot/imported/weapon-ammo-boulder.obj-758c5ae3324808aed37313386d472000.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

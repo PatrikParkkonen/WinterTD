@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0p1b4g5r8s30"
+path="res://.godot/imported/tile-tree-double.obj-02656b8e5446257089bcdca54596cbf2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tile-tree-double.obj-02656b8e5446257089bcdca54596cbf2.mesh"]
+
+source_file="res://Models/tile-tree-double.obj"
+dest_files=["res://.godot/imported/tile-tree-double.obj-02656b8e5446257089bcdca54596cbf2.mesh", "res://.godot/imported/tile-tree-double.obj-02656b8e5446257089bcdca54596cbf2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

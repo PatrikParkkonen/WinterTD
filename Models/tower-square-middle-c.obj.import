@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b88ass7day16e"
+path="res://.godot/imported/tower-square-middle-c.obj-e9e26cc640fac8b8bbd7c349631265f7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-square-middle-c.obj-e9e26cc640fac8b8bbd7c349631265f7.mesh"]
+
+source_file="res://Models/tower-square-middle-c.obj"
+dest_files=["res://.godot/imported/tower-square-middle-c.obj-e9e26cc640fac8b8bbd7c349631265f7.mesh", "res://.godot/imported/tower-square-middle-c.obj-e9e26cc640fac8b8bbd7c349631265f7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

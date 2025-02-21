@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfug0ib7tnfh"
+path="res://.godot/imported/snow-tile.obj-62e37f83ac4e861170c7b06e54cf69ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow-tile.obj-62e37f83ac4e861170c7b06e54cf69ff.mesh"]
+
+source_file="res://Models/snow-tile.obj"
+dest_files=["res://.godot/imported/snow-tile.obj-62e37f83ac4e861170c7b06e54cf69ff.mesh", "res://.godot/imported/snow-tile.obj-62e37f83ac4e861170c7b06e54cf69ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

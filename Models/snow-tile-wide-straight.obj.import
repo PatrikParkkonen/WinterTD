@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cv27j1sg2crcg"
+path="res://.godot/imported/snow-tile-wide-straight.obj-86986e16a2e752d2a6128b9d32603932.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow-tile-wide-straight.obj-86986e16a2e752d2a6128b9d32603932.mesh"]
+
+source_file="res://Models/snow-tile-wide-straight.obj"
+dest_files=["res://.godot/imported/snow-tile-wide-straight.obj-86986e16a2e752d2a6128b9d32603932.mesh", "res://.godot/imported/snow-tile-wide-straight.obj-86986e16a2e752d2a6128b9d32603932.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bycwe8juc4equ"
+path="res://.godot/imported/snow-tile-river-waterfall.obj-97f4d32de46e3d8a71b0dca7d836dcda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow-tile-river-waterfall.obj-97f4d32de46e3d8a71b0dca7d836dcda.mesh"]
+
+source_file="res://Models/snow-tile-river-waterfall.obj"
+dest_files=["res://.godot/imported/snow-tile-river-waterfall.obj-97f4d32de46e3d8a71b0dca7d836dcda.mesh", "res://.godot/imported/snow-tile-river-waterfall.obj-97f4d32de46e3d8a71b0dca7d836dcda.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
