@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cx7ybptyw0wc4"]
+[gd_scene load_steps=13 format=3 uid="uid://cx7ybptyw0wc4"]
 
 [ext_resource type="PackedScene" uid="uid://85ns3fpq3kgm" path="res://Tiles/snow_tile_endRoundSpawn.tscn" id="1_ifip7"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vkrb0"]
@@ -7,6 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://ca0dd260x44cq" path="res://Tiles/snow_tile_end.tscn" id="4_uw27g"]
 [ext_resource type="PackedScene" uid="uid://chqstnuapwsmi" path="res://Tiles/snow_tile.tscn" id="5_5occx"]
 [ext_resource type="PackedScene" uid="uid://bajqf2josyx1u" path="res://Scenes/cannon.tscn" id="7_2na8f"]
+[ext_resource type="Script" path="res://Scripts/RTS_Camera.gd" id="8_t5gbw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8iniy"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_shovm"]
+sky_material = SubResource("ProceduralSkyMaterial_8iniy")
+
+[sub_resource type="Environment" id="Environment_k72qj"]
+background_mode = 2
+sky = SubResource("Sky_shovm")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="Curve3D" id="Curve3D_361m0"]
 _data = {
@@ -17,6 +31,13 @@ point_count = 3
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_vkrb0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k72qj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 3.64791, 3.953, 0)
+shadow_enabled = true
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -106,9 +127,6 @@ curve = SubResource("Curve3D_361m0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.965926, 0, -0.258819, 0.12941, 0.866025, 0.482963, 0.224144, -0.5, 0.836516, 0, 2, 6)
-
 [node name="Cannon" parent="." instance=ExtResource("7_2na8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.2, 1.5)
 
@@ -117,14 +135,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.2, 1.5)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40018, 3, 0)
+visible = false
 light_energy = 5.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40018, 3, 4)
+visible = false
 light_energy = 5.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40018, 3, 4)
+visible = false
 light_energy = 5.0
+
+[node name="camera_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.286, 0, 4.3923)
+script = ExtResource("8_t5gbw")
+
+[node name="camera_socket" type="Node3D" parent="camera_base"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.0236161, 0, -0.0186176)
+
+[node name="Camera3D" type="Camera3D" parent="camera_base/camera_socket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46555, 0)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
