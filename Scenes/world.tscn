@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cx7ybptyw0wc4"]
+[gd_scene load_steps=14 format=3 uid="uid://cx7ybptyw0wc4"]
 
 [ext_resource type="PackedScene" uid="uid://85ns3fpq3kgm" path="res://Tiles/snow_tile_endRoundSpawn.tscn" id="1_ifip7"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vkrb0"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cym8hy5vbimlp" path="res://Tiles/snow_tile_corner-square.tscn" id="3_yox8l"]
 [ext_resource type="PackedScene" uid="uid://ca0dd260x44cq" path="res://Tiles/snow_tile_end.tscn" id="4_uw27g"]
 [ext_resource type="PackedScene" uid="uid://chqstnuapwsmi" path="res://Tiles/snow_tile.tscn" id="5_5occx"]
-[ext_resource type="PackedScene" uid="uid://bajqf2josyx1u" path="res://Scenes/cannon.tscn" id="7_2na8f"]
 [ext_resource type="Script" path="res://Scripts/RTS_Camera.gd" id="8_t5gbw"]
+[ext_resource type="PackedScene" uid="uid://bsnp2dpdneket" path="res://Scenes/activity_button.tscn" id="9_c6uh0"]
+[ext_resource type="PackedScene" uid="uid://r7vg4baaashl" path="res://Tiles/snow_tile_dirt.tscn" id="10_y2n3r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8iniy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,22 +45,23 @@ shadow_enabled = true
 [node name="Tile_Snow" parent="Map" instance=ExtResource("1_ifip7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="Tile_Snow2" parent="Map" instance=ExtResource("2_yqa38")]
-
 [node name="Tile_Snow3" parent="Map" instance=ExtResource("2_yqa38")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
+[node name="Tile_Snow28" parent="Map" instance=ExtResource("2_yqa38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="Tile_Snow5" parent="Map" instance=ExtResource("2_yqa38")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0004, 0, 3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0004, 0, 2)
 
 [node name="Tile_Snow6" parent="Map" instance=ExtResource("2_yqa38")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.0004, 0, 3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.0004, 0, 2)
 
 [node name="Tile_Snow4" parent="Map" instance=ExtResource("3_yox8l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2)
 
 [node name="Tile_Snow7" parent="Map" instance=ExtResource("4_uw27g")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 2)
 
 [node name="Tile_Snow8" parent="Map" instance=ExtResource("5_5occx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
@@ -98,10 +100,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
 
 [node name="Tile_Snow17" parent="Map" instance=ExtResource("5_5occx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="Tile_Snow18" parent="Map" instance=ExtResource("5_5occx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
 
 [node name="Tile_Snow19" parent="Map" instance=ExtResource("5_5occx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
@@ -122,31 +124,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
 
 [node name="Path" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112639, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.472076, 0.112639, -0.518124)
 curve = SubResource("Curve3D_361m0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-
-[node name="Cannon" parent="." instance=ExtResource("7_2na8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.2, 1.5)
-
-[node name="Cannon2" parent="." instance=ExtResource("7_2na8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.2, 1.5)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40018, 3, 0)
-visible = false
-light_energy = 5.0
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40018, 3, 4)
-visible = false
-light_energy = 5.0
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40018, 3, 4)
-visible = false
-light_energy = 5.0
 
 [node name="camera_base" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.286, 0, 4.3923)
@@ -156,6 +137,43 @@ script = ExtResource("8_t5gbw")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.0236161, 0, -0.0186176)
 
 [node name="Camera3D" type="Camera3D" parent="camera_base/camera_socket"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46555, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54595e-05, 2.47166, 4.76837e-07)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ActivityButton" parent="Control" instance=ExtResource("9_c6uh0")]
+layout_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.107323, 0.994224, 0, -0.994224, -0.107323, -0.463481, 10.0272, 0.223448)
+
+[node name="Tile_Snow" parent="." instance=ExtResource("5_5occx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00772, 0, 0.0446715)
+
+[node name="Tile_Snow_Corner" parent="." instance=ExtResource("3_yox8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="Tile_Snow_Dirt" parent="." instance=ExtResource("10_y2n3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 2)
+
+[node name="Tile_Snow_End" parent="." instance=ExtResource("4_uw27g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+
+[node name="Tile_Snow_endRound" parent="." instance=ExtResource("1_ifip7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 4)
+
+[node name="Tile_Snow_Straight" parent="." instance=ExtResource("2_yqa38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
