@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsnp2dpdneket"]
+[gd_scene load_steps=3 format=3 uid="uid://bsnp2dpdneket"]
 
 [ext_resource type="Script" path="res://Scripts/activity_button.gd" id="1_vfmq0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njjs8"]
 
 [node name="ActivityButton" type="Button"]
 custom_minimum_size = Vector2(16, 16)
@@ -14,6 +16,7 @@ offset_top = -16.0
 offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_njjs8")
 script = ExtResource("1_vfmq0")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

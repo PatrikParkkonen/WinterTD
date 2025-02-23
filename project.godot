@@ -23,6 +23,8 @@ tile_snow_endRound=""
 tile_snow_straight=""
 tile_snow_corner=""
 cannon=""
+snow_tile=""
+Enemy=""
 
 [input]
 

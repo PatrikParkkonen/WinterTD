@@ -3,6 +3,9 @@ extends Button
 @export var button_icon:Texture2D
 @export var button_object:PackedScene
 
+@export var activity_cost:int = 50
+@onready var main = $"../.."
+
 
 var cam:Camera3D
 var action_object:Node
@@ -12,6 +15,7 @@ var RAYCAST_LENGTH:int = 100
 var _is_dragging:bool = false
 var _is_valid_location:bool = false
 var _last_valid_location:Vector3
+
 
 var _drag_alpha:float = 0.5
 
@@ -24,6 +28,9 @@ func _ready():
 	add_child(action_object)
 	action_object.visible = false
 	cam = get_viewport().get_camera_3d()
+
+func _process(delta):
+	disabled = activity_cost > main.cash
 
 func _physics_process(_delta):
 	if _is_dragging:
@@ -87,7 +94,7 @@ func clear_material_override(mesh_3d:MeshInstance3D):
 func _on_main_mouse_hit(tile:CollisionObject3D):
 	action_object.visible = true
 	
-	if tile.get_groups()[0].begins_with("tile_snow"):
+	if tile.get_groups()[0].begins_with("snow_tile"):
 		set_child_mesh_alphas(action_object)
 		action_object.global_position = Vector3(tile.global_position.x, 0.2, tile.global_position.z)
 		_last_valid_location = action_object.global_position
@@ -109,4 +116,4 @@ func _on_button_up():
 		var new_object:Node3D = button_object.instantiate()
 		get_viewport().add_child(new_object)
 		new_object.global_position = _last_valid_location
-#		set_child_mesh_alphas(action_object, 1)
+		main.cash -= activity_cost

@@ -7,7 +7,14 @@ var enemies_to_spawn : int = 3
 var can_spawn : bool = true
 var RAYCAST_LENGTH:float = 500
 
+@export var cash = 100
 
+func _ready():
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
+		enemy.enemy_destroyed.connect(add_money)
+		
+func add_money(amount: int):
+	cash += amount
 
 #func _physics_process(_delta):
 	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -26,6 +33,7 @@ var RAYCAST_LENGTH:float = 500
 
 
 func _process(delta):
+	$Control2/CashLabel.text = "Gold: %d" % cash
 	game_manager()
 	
 func game_manager() -> void:
@@ -33,6 +41,11 @@ func game_manager() -> void:
 		$SpawnTimer.start()
 		
 		var tempEnemy = enemy.instantiate()
+		var enemy_script_node = tempEnemy.get_node("Enemy")
+		
+		if enemy_script_node:
+			enemy_script_node.enemy_destroyed.connect(add_money)
+		
 		$Path.add_child(tempEnemy)
 		
 		enemies_to_spawn -= 1
