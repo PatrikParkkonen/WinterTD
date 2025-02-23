@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cx7ybptyw0wc4"]
+[gd_scene load_steps=13 format=3 uid="uid://cx7ybptyw0wc4"]
 
 [ext_resource type="PackedScene" uid="uid://85ns3fpq3kgm" path="res://Tiles/snow_tile_endRoundSpawn.tscn" id="1_ifip7"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vkrb0"]
@@ -6,10 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cym8hy5vbimlp" path="res://Tiles/snow_tile_corner-square.tscn" id="3_yox8l"]
 [ext_resource type="PackedScene" uid="uid://ca0dd260x44cq" path="res://Tiles/snow_tile_end.tscn" id="4_uw27g"]
 [ext_resource type="PackedScene" uid="uid://chqstnuapwsmi" path="res://Tiles/snow_tile.tscn" id="5_5occx"]
-[ext_resource type="PackedScene" uid="uid://bajqf2josyx1u" path="res://Scenes/cannon.tscn" id="7_2na8f"]
 [ext_resource type="Script" path="res://Scripts/RTS_Camera.gd" id="8_t5gbw"]
 [ext_resource type="PackedScene" uid="uid://bsnp2dpdneket" path="res://Scenes/activity_button.tscn" id="9_c6uh0"]
-[ext_resource type="Texture2D" uid="uid://dxvk8ub0tl3ov" path="res://Images/weapon-cannon.png" id="9_qlj0d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8iniy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -370,8 +368,6 @@ grow_vertical = 0
 
 [node name="ActivityButton" parent="Control" instance=ExtResource("9_c6uh0")]
 layout_mode = 1
-button_icon = ExtResource("9_qlj0d")
-button_object = ExtResource("7_2na8f")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.107323, 0.994224, 0, -0.994224, -0.107323, -0.463481, 10.0272, 0.223448)

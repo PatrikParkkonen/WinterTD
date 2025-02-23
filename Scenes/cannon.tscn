@@ -9,7 +9,7 @@ size = Vector3(1, 0.110229, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_tk0ax"]
 radius = 1.5
 
-[node name="Cannon" type="StaticBody3D"]
+[node name="Cannon" type="StaticBody3D" groups=["cannon"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 script = ExtResource("1_djweu")
 
@@ -20,7 +20,7 @@ mesh = ExtResource("1_1rx5m")
 [node name="Aim" type="Marker3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382018, 0.247054)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["cannon"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0014891, 0)
 shape = SubResource("BoxShape3D_g47ge")
 
