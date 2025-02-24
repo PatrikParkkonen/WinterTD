@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cx7ybptyw0wc4"]
+[gd_scene load_steps=17 format=3 uid="uid://cx7ybptyw0wc4"]
 
 [ext_resource type="PackedScene" uid="uid://85ns3fpq3kgm" path="res://Tiles/snow_tile_endRoundSpawn.tscn" id="1_ifip7"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vkrb0"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://Scripts/RTS_Camera.gd" id="8_t5gbw"]
 [ext_resource type="PackedScene" uid="uid://bsnp2dpdneket" path="res://Scenes/activity_button.tscn" id="9_c6uh0"]
 [ext_resource type="Texture2D" uid="uid://dxvk8ub0tl3ov" path="res://Images/weapon-cannon.png" id="9_qlj0d"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="11_b03or"]
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="12_6761h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8iniy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -344,6 +346,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.472076, 0.112639, -0.51812
 curve = SubResource("Curve3D_361m0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.1
 
 [node name="camera_base" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.286, 0, 4.3923)
@@ -399,4 +402,74 @@ theme_override_font_sizes/font_size = 24
 text = "Gold 0"
 horizontal_alignment = 1
 
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LifeLabel" type="Label" parent="Control3"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "Lives: 10"
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("11_b03or")
+
+[node name="Panel" type="Panel" parent="GameOver"]
+offset_right = 1152.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="GameOver"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -496.0
+offset_right = 528.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="GameOver"]
+offset_left = 528.0
+offset_top = 256.0
+offset_right = 656.0
+offset_bottom = 312.0
+text = "Retry"
+
+[node name="WinScreen" type="CanvasLayer" parent="."]
+script = ExtResource("12_6761h")
+
+[node name="Panel" type="Panel" parent="WinScreen"]
+offset_right = 1152.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="WinScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -496.0
+offset_right = 528.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "You win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgain" type="Button" parent="WinScreen"]
+offset_left = 528.0
+offset_top = 256.0
+offset_right = 656.0
+offset_bottom = 312.0
+text = "Play again"
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="GameOver/Retry" to="GameOver" method="_on_retry_pressed"]
+[connection signal="pressed" from="WinScreen/PlayAgain" to="WinScreen" method="_on_play_again_pressed"]
